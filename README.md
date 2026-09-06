@@ -55,3 +55,15 @@ This module zooms out to the big picture — how a RISC-V processor represents a
 - How a Software Application Produces a Hardware Output
 - Digital ASIC Design (RTL Input, EDA Tools, PDK Data)
 - RTL to GDSII Flow
+
+## Module 7: Floorplanning, Placement & Routing Fundamentals
+This module covers the first physical design stage — defining the chip's core/die dimensions, placing fixed macros and power infrastructure, reserving I/O pin locations, and finally placing and routing the standard cells that implement the synthesized netlist.
+
+- Define Height and Width
+- Define Locations of Preplaced Cells
+- Decoupling Capacitors
+- Power Planning
+- Pin Placement
+- Logical Cell Placement Blocking
+- Placement and Routing
+- Cell Design Flow
