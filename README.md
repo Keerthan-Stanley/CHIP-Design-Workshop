@@ -44,3 +44,14 @@ This module covers how `if-else` and `case` statements infer hardware, the dange
 - If-Case Constructs
 - Incomplete If / Case
 - For Loop and For-Generate
+
+
+-> PHYSICAL DESIGN
+
+## Module 6: From Software to Silicon — The RTL-to-GDSII Flow
+This module zooms out to the big picture — how a RISC-V processor represents a real, open, industry-relevant target architecture, how a software application ultimately becomes hardware, and the complete Digital ASIC design flow that takes RTL all the way to a fabricable GDSII layout.
+
+- RISC-V
+- How a Software Application Produces a Hardware Output
+- Digital ASIC Design (RTL Input, EDA Tools, PDK Data)
+- RTL to GDSII Flow
