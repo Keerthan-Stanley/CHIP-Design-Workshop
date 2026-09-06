@@ -1,4 +1,4 @@
-### Module 7 (Class): Floorplanning, Placement & Routing Fundamentals
+### Module 2 (Class): Floorplanning, Placement & Routing Fundamentals
 
 CONTENTS
 1. Define Height and Width
