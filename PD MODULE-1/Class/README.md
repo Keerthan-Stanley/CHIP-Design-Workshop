@@ -1,4 +1,4 @@
-### Module 6 (Class): From Software to Silicon — The RTL-to-GDSII Flow
+### Module 1 (Class): From Software to Silicon — The RTL-to-GDSII Flow
 
 CONTENTS
 1. RISC-V
