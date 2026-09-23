@@ -67,3 +67,9 @@ This module covers the first physical design stage — defining the chip's core/
 - Logical Cell Placement Blocking
 - Placement and Routing
 - Cell Design Flow
+  
+## Module 8: Standard Cell Design — SPICE Characterization & Layout
+This module goes inside the standard cell itself — simulating a CMOS inverter in SPICE (ngspice) to characterize its electrical behavior, then building its physical layout from the ground up, layer by layer, following the SKY130 process's fabrication sequence.
+
+- SPICE Simulation of CMOS Inverter
+- Standard Cell Layout Design
