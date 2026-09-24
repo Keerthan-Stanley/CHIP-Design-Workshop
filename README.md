@@ -73,3 +73,11 @@ This module goes inside the standard cell itself — simulating a CMOS inverter 
 
 - SPICE Simulation of CMOS Inverter
 - Standard Cell Layout Design
+
+## Module 9: Timing Analysis, Clock Tree Synthesis & Real Clock Constraints
+This module deepens the understanding of timing by examining how delay tables are used in STA, how setup time analysis accounts for clock jitter, the process of Clock Tree Synthesis (CTS), and finally performing complete setup/hold analysis using a real clock network instead of ideal clocks.
+
+- Delay Tables
+- Setup Time Analysis and Clock Jitter
+- Clock Tree Synthesis
+- Setup and Hold Analysis Using Real Clock
