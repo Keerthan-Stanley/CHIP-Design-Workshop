@@ -81,3 +81,15 @@ This module deepens the understanding of timing by examining how delay tables ar
 - Setup Time Analysis and Clock Jitter
 - Clock Tree Synthesis
 - Setup and Hold Analysis Using Real Clock
+
+## Module 10: Detailed Routing — Lee’s Algorithm, DRC & TritonRoute
+This module covers the fundamentals of maze routing (Lee’s algorithm), the role of Design Rule Checks (DRC), the distinction between global and detailed routing, and a deep dive into OpenROAD’s TritonRoute — its key features, connectivity handling, and routing topology algorithms.
+
+- Introduction to Maze Routing – Lee’s Algorithm
+- Lee’s Algorithm – Conclusion
+- Design Rule Check (DRC)
+- Basics of Global and Detail Routing & Configuring TritonRoute
+- TritonRoute Feature 1 – Honors Pre-processed Route Guides
+- TritonRoute Features 2 & 3 – Inter-guide Connectivity and Intra- & Inter-layer Routing
+- TritonRoute Method to Handle Connectivity
+- Routing Topology Algorithm
