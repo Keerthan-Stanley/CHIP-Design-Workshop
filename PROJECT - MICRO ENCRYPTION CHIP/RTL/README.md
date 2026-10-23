@@ -37,6 +37,7 @@ Result: ALL TESTS PASSED (521 checks) (Proving RTL and Gate-Level equivalence).
 Before physical design, the synthesized netlist is checked for timing closure across 16 Process, Voltage, and Temperature (PVT) corners. Pre-layout STA uses estimated wire delays to ensure the logic can run at the target frequency (100 MHz / 10ns clock).
 
 # Loop through all 16 corners and run OpenSTA
+```
 for LIB in platforms/sky130hd/lib/sky130_fd_sc_hd__*.lib; do
   C=$(basename $LIB .lib | sed 's/sky130_fd_sc_hd__//')
   cat > run_corner.tcl << EOF
@@ -50,6 +51,7 @@ for LIB in platforms/sky130hd/lib/sky130_fd_sc_hd__*.lib; do
   EOF
     openroad -exit run_corner.tcl 2>/dev/null | grep -E "wns max|tns max"
   done
+```
 
 Result: Setup timing met at ff and tt corners (0.00 WNS). Violations occurred at extreme ss corners (e.g., ss_n40C_1v28 WNS = -42.74 ns).
 
