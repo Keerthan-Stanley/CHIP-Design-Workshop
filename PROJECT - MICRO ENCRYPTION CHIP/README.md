@@ -1,3 +1,30 @@
+## 1. What is the Project? (The Application)
+**Problem:** IoT devices (sensors, smart tags) need to send data over insecure radio frequencies. Software encryption on tiny microcontrollers is too slow and drains the battery.
+**Solution:** A dedicated hardware accelerator that encrypts 32-bit blocks of data using a 64-bit key in just 22 clock cycles (at 100 MHz). 
+**How it works:** The chip takes plaintext and a secret key, scrambles the data using Add-Rotate-XOR (ARX) operations, and outputs ciphertext.
+
+---
+
+## 2. RTL Design (The Verilog Code)
+**File:** `speck32_64_enc.v`
+**Architecture:** The design uses a Finite State Machine (FSM) with four states: `IDLE`, `LOAD`, `RND`, and `FINISH`.
+- **FSM & Counter:** A 5-bit counter tracks the 22 encryption rounds.
+- **Data Path:** The 32-bit block is split into two 16-bit registers (`x`, `y`). The 64-bit key is split into four 16-bit registers (`k`, `l0`, `l1`, `l2`).
+- **The Round Function (ARX):** Every clock cycle, the hardware performs:
+  1. Rotate `x` right by 7 bits.
+  2. Add `y` to the rotated `x`.
+  3. XOR the result with the current round key.
+  4. Rotate `y` left by 2 bits.
+  5. XOR `y` with the new `x`.
+- **Key Schedule:** The same ARX logic is used to generate the next round key on the fly, saving hardware area.
+
+## 3. Testbench & Verification (How we proved it works)
+**File:** `tb_speck32_64_enc.v`
+**Methodology:** We wrote a self-checking testbench. It contains a mathematically independent "reference model" of the SPECK cipher written in Verilog. 
+- **Checks:** It applies the **Official SPECK Test Vector** (Key: `1918_1110_0908_0100`, Plaintext: `6574_694c`) and expects the ciphertext `a868_42f2`.
+- **Stress Testing:** It tests boundary conditions (all zeros, all ones) and generates **500 random plaintext/key pairs**, comparing the hardware output against the software model.
+- **Result:** RTL Simulation passed **521 checks**. Gate-Level Simulation (GLS) also passed **521 checks**, proving the synthesized netlist behaves exactly like the RTL.
+
 ## Phase 1: RTL Design & Verification (All 5 Stages)
 
 ## Stage 1: RTL Design & Architecture
